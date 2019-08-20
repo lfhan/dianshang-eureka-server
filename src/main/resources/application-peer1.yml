@@ -1,18 +1,9 @@
-server: 
-  port: 8761
 eureka:
-  server:
-    #enable-self-preservation: false           # 关闭自我保护模式（缺省为打开）自我保护模式是客户端心跳丢失率达到85%就把当前客户端存储的服务列表保护起来
-    #eviction-interval-timer-in-ms: 5000       # 续期时间，即扫描失效服务的间隔时间（缺省为60*1000ms）
   instance: 
-    metadataMap: 
-      zone: beijing
     hostname: peer1
   client:
-    #register-with-eureka: false #向eureka注册为服务，服务提供者的这个属性必须是true，设置为false的话消费者就无法获取这个服务
-    #fetch-registry: false # 服务消费者向注册中心获取服务列表，服务消费者这个属性必须是true
-    service-url:
+    serviceUrl:
       defaultZone: http://peer2:8762/eureka/
-spring:
-  application:
-    name: eureka-server1
+#spring:
+#  application:
+#    name: eureka-server1
