@@ -1,0 +1,6 @@
+spring: 
+  profiles: 
+    active: peer2
+eureka:
+  instance:
+    prefer-ip-address: false  #true为使用ip，false为使用主机名  默认false

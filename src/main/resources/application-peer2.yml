@@ -1,0 +1,18 @@
+server: 
+  port: 8762
+eureka:
+  server:
+    #enable-self-preservation: false           # 关闭自我保护模式（缺省为打开）
+    #eviction-interval-timer-in-ms: 5000       # 续期时间，即扫描失效服务的间隔时间（缺省为60*1000ms）
+  instance: 
+    metadataMap: 
+      zone: beijing
+    hostname: peer2
+  client:
+    #register-with-eureka: false #服务提供者的这个属性必须是true，设置为false的话就无法获取服务列表
+    #fetch-registry: false
+    service-url:
+      defaultZone: http://peer1:8761/eureka/
+spring:
+  application:
+    name: eureka-server2
